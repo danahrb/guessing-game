@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
+  background-image: url('/letters1.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,10 +9,11 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
+  
 }
 
 h1 {
@@ -40,7 +41,6 @@ button {
 button:hover {
   background-color: #0d4178;
 }
-
 
 
 

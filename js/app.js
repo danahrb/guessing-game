@@ -13,30 +13,48 @@ let currentGuess = "";
 const input = document.querySelector('input');
 const guess = document.querySelector('.guess');
 const checkBtn = document.querySelector('.check');
+const hint = document.querySelector('.hint');
 
 /*-------------------------------- Functions --------------------------------*/
 function checkLetter() {
     chance--;
-    console.log(currentGuess)
-    const inputValue = input.value.toLowerCase();
+
+    const inputValue = input.value;
+    if(inputValue)
+      {
     if (inputValue === randomLetter) {
         currentGuess = randomLetter;
-        guess.textContent = `Correct! You guessed the letter "${currentGuess}"`;
+        guess.textContent = `Correct! You guessed the letter "${currentGuess}" :)`;
+        guess.style.color = "#71C64E";
         input.disabled = true;
         checkBtn.textContent = "Replay";
-    } else {
+        reset();
+    } 
+    else {
       input.value = "";
-        guess.textContent = `Incorrect. Remaining chances: ${chance}`;
+        guess.textContent = `Incorrect! Remaining chances: ${chance}`;
+        guess.style.color = "#DE0611";
+        showHint();
     }
+    
     if (chance === 0) {
       checkBtn.textContent = "Replay";
-      input.disabled = true;
       input.value = "";
-      guess.textContent = `The letter was "${randomLetter}". You lost the game.`;
+      guess.textContent = `The letter was "${randomLetter}". You lost the game :(`;
+      guess.style.color="#DE0611";
+      hint.textContent="";
+      reset();
   }
+    }
+}
+
+function reset(){
 
 }
 
+function showHint(){
+  hint.textContent = `The order of the current letter is ${randomIndex + 1}`;
+}
 
 
 /*----------------------------- Event Listeners -----------------------------*/
