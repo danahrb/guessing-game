@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url('/letters1.jpg');
+  background-image: url('/images/letters1.jpg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@ body {
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-  
+
 }
 
 h1 {

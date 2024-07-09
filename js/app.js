@@ -6,7 +6,7 @@ const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 /*---------------------------- Variables (state) ----------------------------*/
 let randomIndex = Math.floor(Math.random() * letters.length);
 let randomLetter = letters[randomIndex];
-let chance = 3; 
+let chance = 5; 
 let currentGuess = "";
 
 /*------------------------ Cached Element References ------------------------*/
@@ -52,7 +52,7 @@ function checkLetter() {
 function reset(){
   randomIndex = Math.floor(Math.random() * letters.length);
   randomLetter = letters[randomIndex];
-  chance = 3;
+  chance = 5;
   currentGuess = "";
   input.disabled = false;
   input.value = "";
