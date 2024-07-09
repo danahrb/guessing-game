@@ -6,7 +6,7 @@ const letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 /*---------------------------- Variables (state) ----------------------------*/
 let randomIndex = Math.floor(Math.random() * letters.length);
 let randomLetter = letters[randomIndex];
-let chance = 5; 
+let chance = 3; 
 let currentGuess = "";
 
 /*------------------------ Cached Element References ------------------------*/
@@ -17,18 +17,17 @@ const hint = document.querySelector('.hint');
 
 /*-------------------------------- Functions --------------------------------*/
 function checkLetter() {
-    chance--;
 
     const inputValue = input.value;
     if(inputValue)
       {
+        chance--;
     if (inputValue === randomLetter) {
         currentGuess = randomLetter;
         guess.textContent = `Correct! You guessed the letter "${currentGuess}" :)`;
         guess.style.color = "#71C64E";
         input.disabled = true;
         checkBtn.textContent = "Replay";
-        reset();
     } 
     else {
       input.value = "";
@@ -36,20 +35,30 @@ function checkLetter() {
         guess.style.color = "#DE0611";
         showHint();
     }
-    
-    if (chance === 0) {
+
+    if (chance <= 0) {
       checkBtn.textContent = "Replay";
       input.value = "";
       guess.textContent = `The letter was "${randomLetter}". You lost the game :(`;
       guess.style.color="#DE0611";
-      hint.textContent="";
-      reset();
-  }
+      hint.textContent="";  }
     }
-}
+    
+    else
+      input.focus();
+    
+  }
 
 function reset(){
-
+  randomIndex = Math.floor(Math.random() * letters.length);
+  randomLetter = letters[randomIndex];
+  chance = 3;
+  currentGuess = "";
+  input.disabled = false;
+  input.value = "";
+  guess.textContent = "";
+  hint.textContent = "";
+  checkBtn.textContent="Check";
 }
 
 function showHint(){
@@ -58,7 +67,12 @@ function showHint(){
 
 
 /*----------------------------- Event Listeners -----------------------------*/
-checkBtn.addEventListener("click", checkLetter);
+checkBtn.addEventListener("click", function(){
+  if (checkBtn.textContent === "Replay") {
+    reset();
+  }else 
+  checkLetter();
+});
 
 
 // input.addEventListener("input", updateValue);
@@ -67,3 +81,4 @@ checkBtn.addEventListener("click", checkLetter);
 //   let userinput = e.target.value;
 //   console.log(userinput)
 // }
+
