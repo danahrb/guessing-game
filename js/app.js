@@ -80,7 +80,7 @@ function reset() {
 }
 
 function showHint() {
-  if (chance > 2) {
+  if (chance >=  2) {
     hint.textContent = `Hint: ${randomC.hint}`;
   } else {
     hint.textContent = `Hint: ${randomC.hint}`;
