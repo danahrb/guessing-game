@@ -3,7 +3,7 @@
 const countries = [
   { name: "italy", hint: "Where spaghetti and meatballs roam free.", image: "../images/countries/italy.png" },
   { name: "australia", hint: "Where the kangaroos hop and the koalas nap.", image: "../images/countries/australia.png" },
-  { name: "brazil", hint: "The land of football, Carnival, and really big trees.", image: "/images/countries/brazil.png" },
+  { name: "brazil", hint: "The land of football, Carnival, and really big trees.", image: "../images/countries/brazil.png" },
   { name: "egypt", hint: "Where the Nile runs wild and the pharaohs rule.", image: "../images/countries/egypt.png" },
   { name: "india", hint: "The spice-filled, curry-powered, elephant-riding wonderland.", image: "../images/countries/india.png" },
   { name: "norway", hint: "Where the fjords are deep, the Vikings are fierce, and the Northern Lights put on a show.", image: "../images/countries/norway.png" },
