@@ -1,19 +1,28 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url('/images/letters1.jpg');
+  background-image: url('/images/world1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   margin: 0;
 }
+.country-image {
+  width: 100px;
+  height: 100px;
+  display: none;
+  margin: 0 auto;
+border: solid #cccccc3c;
 
+}
 .container {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.905);
   padding: 2rem;
   border-radius: 8px;
   text-align: center;
-
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 h1 {
@@ -29,46 +38,28 @@ input {
   margin-right: 0.5rem;
 }
 
+
 button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
-  background-color: #4a92df;
+  background-color: #9e7b9e;
   color: white;
   border: none;
   border-radius: 4px;
+  margin-top: 30px;
 }
 
 button:hover {
-  background-color: #0d4178;
+  background-color: #59325b;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .guess {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-} */
-
-/* .chances {
-  margin-top: 0.5rem;
-  font-size: 1rem;
+.guess{
+  font-weight: bold;
 }
-      */
+
+.hint{
+  font-size:smaller;
+}
+
+
