@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-image: url('/guessing-game/images/world1.jpg');
+  background-image: url('../images/world1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
